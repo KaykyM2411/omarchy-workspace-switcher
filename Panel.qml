@@ -127,9 +127,15 @@ Item {
             Layout.fillWidth: true
           }
 
-          Flow {
+          Item {
+            id: workspaceGrid
             Layout.fillWidth: true
-            spacing: Style.space(10)
+            readonly property real gap: Style.space(10)
+            readonly property int rows: Math.ceil(root.workspaces.length / root.columns)
+            readonly property real tileWidth: Math.min(Style.space(440),
+              (width - gap * (root.columns - 1)) / root.columns)
+            readonly property real tileHeight: tileWidth * 0.62
+            implicitHeight: rows > 0 ? rows * tileHeight + (rows - 1) * gap : 0
 
             Repeater {
               model: root.workspaces
@@ -138,9 +144,15 @@ Item {
                 required property int index
                 readonly property var workspaceData: modelData
                 readonly property bool highlighted: index === root.selected
-                width: Math.min(Style.space(440),
-                  (content.width - Style.space(10) * (root.columns - 1)) / root.columns)
-                height: width * 0.62
+                readonly property int row: Math.floor(index / root.columns)
+                readonly property int cardsInRow: Math.min(root.columns,
+                  root.workspaces.length - row * root.columns)
+                width: workspaceGrid.tileWidth
+                height: workspaceGrid.tileHeight
+                x: (workspaceGrid.width - cardsInRow * width
+                  - (cardsInRow - 1) * workspaceGrid.gap) / 2
+                  + (index % root.columns) * (width + workspaceGrid.gap)
+                y: row * (height + workspaceGrid.gap)
                 radius: Style.cornerRadius
                 color: highlighted ? Color.menu.selectedBackground : Color.background
                 border.color: highlighted ? Color.accent : Color.popups.border

@@ -6,6 +6,7 @@ A theme-aware workspace overview for the Omarchy Shell. Open it with a keyboard 
 
 - Shows occupied, numbered workspaces across connected monitors.
 - Shows up to four window previews per workspace.
+- Centers cards in incomplete rows.
 - Uses the current Omarchy Shell colors, typography, spacing, and corners.
 - Opens on demand; previews stop capturing when the panel closes.
 - Supports arrow keys or Tab to navigate, Enter to select, and Escape to close.
