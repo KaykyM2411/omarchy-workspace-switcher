@@ -2,7 +2,7 @@
 
 A theme-aware workspace overview for the Omarchy Shell. Open it with a keyboard shortcut, see numbered workspaces and window previews, then select one with the mouse or keyboard.
 
-![Workspace overview with three workspaces and a centered final row](assets/workspace-switcher.png)
+![Workspace overview with three workspaces and a centered final row](preview.png)
 
 ## Features
 
@@ -37,6 +37,14 @@ omarchy-shell shell toggle kaykym.workspace-switcher
 ```
 
 To update a Git-installed copy, run `omarchy plugin update kaykym.workspace-switcher`.
+
+## Remove
+
+Remove the shortcut you added to `~/.config/hypr/bindings.lua`, then remove the plugin:
+
+```bash
+omarchy plugin remove kaykym.workspace-switcher
+```
 
 ## Como usar
 
