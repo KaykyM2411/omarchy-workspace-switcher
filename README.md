@@ -2,6 +2,8 @@
 
 A theme-aware workspace overview for the Omarchy Shell. Open it with a keyboard shortcut, see numbered workspaces and window previews, then select one with the mouse or keyboard.
 
+![Workspace overview with three workspaces and a centered final row](assets/workspace-switcher.png)
+
 ## Features
 
 - Shows occupied, numbered workspaces across connected monitors.
