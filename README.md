@@ -12,6 +12,13 @@ A theme-aware workspace overview for the Omarchy Shell. Open it with a keyboard 
 - Uses the current Omarchy Shell colors, typography, spacing, and corners.
 - Opens on demand; previews stop capturing when the panel closes.
 - Supports arrow keys or Tab to navigate, Enter to select, and Escape to close.
+- Automatically translates panel messages using the system locale reported by Qt.
+
+Supported languages: English, Portuguese, Spanish, French, German, Italian, Dutch,
+Polish, Russian, Ukrainian, Turkish, Japanese, Korean, Chinese (Simplified and
+Traditional), Arabic, and Hindi. Regional variants share translations; unsupported
+locales (including `C` and `POSIX`) use English. Restart Omarchy Shell after changing
+the system language so its process picks up the new locale.
 
 ## Requirements
 
@@ -59,7 +66,7 @@ O painel mostra os workspaces numerados que têm janelas abertas, inclusive em o
 
 ## Development
 
-The repository root is the Omarchy plugin folder: `manifest.json` declares the `panel` entry point, and `Panel.qml` contains the UI. Validate changes with:
+The repository root is the Omarchy plugin folder: `manifest.json` declares the `panel` entry point, `Panel.qml` contains the UI, and `Translations.js` contains the translations and locale selection. Validate changes with:
 
 ```bash
 omarchy plugin validate .

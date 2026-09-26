@@ -4,12 +4,14 @@ import Quickshell
 import Quickshell.Wayland
 import Quickshell.Hyprland
 import qs.Commons
+import "Translations.js" as Translations
 
 Item {
   id: root
   property var shell: null
   property var manifest: null
   property bool opened: false
+  readonly property var messages: Translations.forLocale(Qt.locale().name)
   readonly property var workspaces: usedWorkspaces()
   property int selected: 0
   readonly property int columns: workspaces.length > 4 ? 3 : 2
@@ -118,13 +120,14 @@ Item {
           spacing: Style.space(18)
 
           Text {
-            text: "WORKSPACES EM USO"
+            text: root.messages.title
             color: Color.popups.text
             font.family: Style.font.family
             font.pixelSize: Style.font.caption
             font.bold: true
             font.letterSpacing: 2
             Layout.fillWidth: true
+            wrapMode: Text.Wrap
           }
 
           Item {
@@ -232,15 +235,16 @@ Item {
 
           Text {
             visible: root.workspaces.length === 0
-            text: "Nenhum workspace com janelas abertas"
+            text: root.messages.empty
             color: Color.muted
             font.family: Style.font.family
             font.pixelSize: Style.font.bodySmall
             Layout.fillWidth: true
+            wrapMode: Text.Wrap
           }
 
           Text {
-            text: "← → / Tab para navegar  ·  Enter para abrir  ·  Esc para fechar"
+            text: root.messages.help
             color: Color.muted
             font.family: Style.font.family
             font.pixelSize: Style.font.caption
