@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "kaykym.workspace-switcher",
   "name": "Workspace Switcher",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Kayky Marcelo",
   "description": "Theme-aware workspace overview with window previews",
   "kinds": ["panel"],

@@ -213,6 +213,7 @@ Item {
                     }
                     Text {
                       text: workspaceData.windows[0] ? workspaceData.windows[0].title : ""
+                      textFormat: Text.PlainText
                       color: Color.muted
                       font.family: Style.font.family
                       font.pixelSize: Style.font.caption
